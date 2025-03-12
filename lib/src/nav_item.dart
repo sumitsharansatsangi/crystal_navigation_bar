@@ -1,4 +1,5 @@
  import 'package:crystal_navigation_bar/crystal_navigation_bar.dart';
+import 'package:crystal_navigation_bar/src/num_text.dart';
 import 'package:flutter/material.dart';
 
 class NavItem extends StatelessWidget {
@@ -102,14 +103,13 @@ class NavItem extends StatelessWidget {
                                   minWidth: 18,
                                   minHeight: 18,
                                 ),
-                                child: Text(
-                                  item.badgeCount.toString(),
+                                child: NumText(
+                               number:   item.badgeCount,
                                   style: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 10,
                                     fontWeight: FontWeight.bold,
                                   ),
-                                  textAlign: TextAlign.center,
                                 ),
                               ),
                             );
