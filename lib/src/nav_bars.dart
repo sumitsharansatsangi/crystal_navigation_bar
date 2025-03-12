@@ -17,7 +17,7 @@ class CrystalNavigationBar extends StatelessWidget {
     this.duration = const Duration(milliseconds: 500),
     this.curve = Curves.easeOutQuint,
     this.indicatorColor,
-    this.marginR = const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+    this.marginR = const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
     this.paddingR = const EdgeInsets.only(bottom: 5, top: 10),
     this.borderRadius = 30,
     this.splashBorderRadius,
@@ -115,7 +115,7 @@ class CrystalNavigationBar extends StatelessWidget {
             height: height! < 105 ? 105 : height,
             child: Padding(
               padding: marginR!,
-              child: Container(
+              child: DecoratedBox(
                 decoration: BoxDecoration(
                   boxShadow: boxShadow, // Apply the shadow here
                   borderRadius: BorderRadius.circular(borderRadius!),

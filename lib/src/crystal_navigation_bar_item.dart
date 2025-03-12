@@ -5,11 +5,15 @@ class CrystalNavigationBarItem {
   /// An icon to display.
   final IconData icon;
 
+  final Text? text;
+
+  final bool showBadge;
+
   /// An icon to display.
   final IconData? unselectedIcon;
 
-  ///badge
-  final Badge? badge;
+  ///badge notification count
+  final int badgeCount;
 
   /// A primary color to use for this tab.
   final Color? selectedColor;
@@ -17,11 +21,18 @@ class CrystalNavigationBarItem {
   /// The color to display when this tab is not selected.
   final Color? unselectedColor;
 
-  CrystalNavigationBarItem({
+  final double height ;
+  final double iconSize; 
+
+  CrystalNavigationBarItem( {
     required this.icon,
+    this.text,
     this.unselectedIcon,
     this.selectedColor,
     this.unselectedColor,
-    this.badge,
+    this.showBadge= false,
+    this.badgeCount =0,
+    this.height=70,
+    this.iconSize=24,
   });
 }

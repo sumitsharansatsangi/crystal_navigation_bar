@@ -17,9 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Crystal Bottom Bar Example',
-      theme: ThemeData(
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: ThemeData(visualDensity: VisualDensity.adaptivePlatformDensity),
       themeMode: ThemeMode.dark,
       home: const HomePage(),
     );
@@ -53,26 +51,28 @@ class _HomePageState extends State<HomePage> {
       //     fit: BoxFit.fitHeight,
       //   ),
       // ),
-      body: Container(
-          color: Colors.blueGrey,
-          child: Center(
-            child: Text(
-              _selectedTab.name,
-              style: const TextStyle(
-                fontSize: 50,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+      body: ColoredBox(
+        color: Colors.blueGrey,
+        child: Center(
+          child: Text(
+            _selectedTab.name,
+            style: const TextStyle(
+              fontSize: 50,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
-          )),
+          ),
+        ),
+      ),
       bottomNavigationBar: CrystalNavigationBar(
         currentIndex: _SelectedTab.values.indexOf(_selectedTab),
         height: 10,
-        // indicatorColor: Colors.blue,
-        unselectedItemColor: Colors.white70,
-        borderWidth: 2,
+        indicatorColor: Colors.blue,
+        unselectedItemColor: Colors.white10,
+        // unselectedItemColor: Colors.white70,
+        // borderWidth: 1,
         outlineBorderColor: Colors.white,
-        backgroundColor: Colors.black.withValues(alpha: 0.5),
+        backgroundColor: Colors.black.withAlpha(122),
         // boxShadow: [
         //   BoxShadow(
         //     color: Colors.black.withOpacity(0.1),
@@ -87,13 +87,17 @@ class _HomePageState extends State<HomePage> {
           CrystalNavigationBarItem(
             icon: IconlyBold.home,
             unselectedIcon: IconlyLight.home,
-            selectedColor: Colors.white,
-            badge: Badge(
-              label: Text(
-                "9+",
-                style: TextStyle(color: Colors.white),
-              ),
+            selectedColor: Colors.red,
+            unselectedColor: Colors.amber,
+            text: Text(
+              "Home",
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.red, fontSize: 9),
             ),
+            badgeCount:9,
+            showBadge: true,
+            iconSize: 24,
+            height: 70,
           ),
 
           /// Favourite
@@ -101,26 +105,49 @@ class _HomePageState extends State<HomePage> {
             icon: IconlyBold.heart,
             unselectedIcon: IconlyLight.heart,
             selectedColor: Colors.red,
+            unselectedColor: Colors.amber,
+            text: Text(
+              "Favorite",
+              textAlign: TextAlign.center,
+              style: TextStyle(color: Colors.red, fontSize: 9),
+            ),
+            showBadge: true,
+            badgeCount: 10,
           ),
 
           /// Add
           CrystalNavigationBarItem(
             icon: IconlyBold.plus,
             unselectedIcon: IconlyLight.plus,
-            selectedColor: Colors.white,
+            selectedColor: Colors.red,
+            unselectedColor: Colors.amber,
+            text: Text(
+              "cdc",
+              style: TextStyle(color: Colors.red, fontSize: 9),
+              textAlign: TextAlign.center,
+            ),
+            showBadge: true,
+            badgeCount: 10,
           ),
 
           /// Search
           CrystalNavigationBarItem(
-              icon: IconlyBold.search,
-              unselectedIcon: IconlyLight.search,
-              selectedColor: Colors.white),
+            icon: IconlyBold.search,
+            unselectedIcon: IconlyLight.search,
+            selectedColor: Colors.red,
+            unselectedColor: Colors.amber,
+            showBadge: true,
+            badgeCount: 10,
+          ),
 
           /// Profile
           CrystalNavigationBarItem(
             icon: IconlyBold.user_2,
             unselectedIcon: IconlyLight.user,
-            selectedColor: Colors.white,
+            selectedColor: Colors.red,
+            unselectedColor: Colors.amber,
+            showBadge: true,
+            badgeCount: 10,
           ),
         ],
       ),
