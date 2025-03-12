@@ -1,4 +1,4 @@
-library crystal_navigation_bar;
+library;
 
 export 'src/body.dart';
 export 'src/crystal_navigation_bar_item.dart';
